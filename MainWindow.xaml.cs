@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,17 @@ namespace _27._09._2023_Контейнеры_ч._2
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
+        public MainWindow() {
             InitializeComponent();
+        }
+
+        private void Run_MouseEnter(object sender, MouseEventArgs e) {
+            popup_operation2.IsOpen = true;
+        }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e) {
+            string link = ((Hyperlink)sender).NavigateUri.ToString();
+            Process.Start(link);
         }
     }
 }
